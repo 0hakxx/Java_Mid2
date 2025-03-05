@@ -1,4 +1,4 @@
-package generic.test.ex01;
+package generic.ex01;
 
 public class ContainerTest {
     public static void main(String[] args) {
