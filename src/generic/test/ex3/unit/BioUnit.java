@@ -1,6 +1,7 @@
 package generic.test.ex3.unit;
 
 public class BioUnit {
+
     private String name;
     private int hp;
 
@@ -10,10 +11,11 @@ public class BioUnit {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
+
     public int getHp() {
-        return this.hp;
+        return hp;
     }
 
     @Override
