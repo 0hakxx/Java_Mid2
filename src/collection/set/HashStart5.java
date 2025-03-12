@@ -1,17 +1,19 @@
 package collection.set;
 
-
+import java.util.Arrays;
 import java.util.LinkedList;
 
-
 public class HashStart5 {
-    static final int CAPCITY = 10;
 
-    public static void main(String[] args){
-        LinkedList<Integer>[] buckets = new LinkedList[10];
-        for(int i=0; i<buckets.length; i++){
+    static final int CAPACITY = 10;
+
+    public static void main(String[] args) {
+        //{1, 2, 5, 8, 14, 99}
+        LinkedList<Integer>[] buckets = new LinkedList[CAPACITY];
+        for (int i = 0; i < CAPACITY; i++) {
             buckets[i] = new LinkedList<>();
         }
+
         add(buckets, 1);
         add(buckets, 2);
         add(buckets, 5);
@@ -19,13 +21,29 @@ public class HashStart5 {
         add(buckets, 14);
         add(buckets, 99);
         add(buckets, 9); //중복
+        System.out.println("buckets = " + Arrays.toString(buckets));
+
+        //검색
+        int searchValue = 9;
+        boolean contains = contains(buckets, searchValue);
+        System.out.println("bucket.contains(" + searchValue + ") = " + contains);
     }
 
-    public static void add(LinkedList<Integer>[] buckets, int searchVaalue){
-        int hashIndex = hashIndex(int searchValue);
-    }
-    static int hashIndex(int hashValue){
-        return hashValue % CAPCITY;
+    private static void add(LinkedList<Integer>[] buckets, int value) {
+        int hashIndex = hashIndex(value);
+        LinkedList<Integer> bucket = buckets[hashIndex]; // O(1)
+        if (!bucket.contains(value)) { // O(n)
+            bucket.add(value);
+        }
     }
 
+    private static boolean contains(LinkedList<Integer>[] buckets, int searchValue) {
+        int hashIndex = hashIndex(searchValue);
+        LinkedList<Integer> bucket = buckets[hashIndex]; // O(1)
+        return bucket.contains(searchValue); // O(n)
+    }
+
+    static int hashIndex(int value) {
+        return value % CAPACITY;
+    }
 }
