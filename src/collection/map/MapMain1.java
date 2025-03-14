@@ -1,5 +1,6 @@
 package collection.map;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -21,6 +22,18 @@ public class MapMain1 {
         }
 
         System.out.println("entrySet 활용");
+        Set<Map.Entry<String, Integer>> entries = studentMap.entrySet();
+        for (Map.Entry<String, Integer> entry : entries) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println("key=" + key + ", value=" + value);
+        }
+
+        System.out.println("values 활용");
+        Collection<Integer> values = studentMap.values();
+        for (Integer value : values) {
+            System.out.println("value=" + value);
+        }
 
     }
 }
