@@ -13,9 +13,12 @@ public class ListEx1 {
         students.add(50);
 
         int total = 0;
-        for (Integer student : students) {
-            total += student;
+        for (int i = 0; i < students.size(); i++) {
+            total += students.get(i);
         }
-        System.out.println(total);
-}
+
+        double average = (double) total / students.size();
+        System.out.println("점수 총합: " + total);
+        System.out.println("점수 평균: " + average);
+    }
 }

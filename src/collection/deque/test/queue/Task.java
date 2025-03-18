@@ -1,4 +1,4 @@
-package collection.map.test;
+package collection.deque.test.queue;
 
 public interface Task {
     void execute();

@@ -1,7 +1,5 @@
 package collection.list;
 
-
-import java.util.Arrays;
 public class BatchProcessor {
 
     private final MyList<Integer> list;

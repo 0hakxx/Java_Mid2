@@ -22,20 +22,15 @@ public class Member {
         return Objects.equals(id, member.id);
     }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
     @Override
     public String toString() {
         return "Member{" +
                 "id='" + id + '\'' +
                 '}';
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    public int hashCode2(){
-        return super.hashCode();
     }
 }

@@ -2,12 +2,12 @@ package collection.set;
 
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.Objects;
 
 public class MyHashSetV2 {
+
     static final int DEFAULT_INITIAL_CAPACITY = 16;
 
-    LinkedList<Object>[] buckets;
+    private LinkedList<Object>[] buckets;
 
     private int size = 0;
     private int capacity = DEFAULT_INITIAL_CAPACITY;
@@ -59,9 +59,9 @@ public class MyHashSetV2 {
     }
 
     private int hashIndex(Object value) {
+        //hashCode의 결과로 음수가 나올 수 있다. abs()를 사용해서 마이너스를 제거한다.
         return Math.abs(value.hashCode()) % capacity;
     }
-
 
     public int getSize() {
         return size;
@@ -69,9 +69,10 @@ public class MyHashSetV2 {
 
     @Override
     public String toString() {
-        return "MyHashSetV1{" +
+        return "MyHashSetV2{" +
                 "buckets=" + Arrays.toString(buckets) +
                 ", size=" + size +
+                ", capacity=" + capacity +
                 '}';
     }
 }
