@@ -1,27 +1,28 @@
 package generic.test.ex2;
 
-public class Pair<T1, T2> {
-    private T1 first;
-    private T2 second;
+public class Pair <T1, T2> {
+    private T1 t1;
+    private T2 t2;
 
-    public void setFirst(T1 first){
-        this.first = first;
+    public void setFirst(T1 t1){
+        this.t1 = t1;
     }
-    public void setSecond(T2 second){
-        this.second = second;
+    public void setSecond(T2 t2){
+        this.t2 = t2;
     }
+
     public T1 getFirst(){
-        return first;
+        return t1;
     }
     public T2 getSecond(){
-        return second;
+        return t2;
     }
 
     @Override
     public String toString() {
         return "Pair{" +
-                "first=" + first +
-                ", second=" + second +
+                "first=" + t1 +
+                ", second=" + t2 +
                 '}';
     }
 }
