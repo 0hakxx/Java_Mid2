@@ -4,27 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
+    private List<Item> list = new ArrayList<>();
 
-    private List<Item> items = new ArrayList<>();
-
-    public void addItem(Item item) {
-        items.add(item);
+    public void addItem(Item item){
+        list.add(item);
     }
 
-    public void displayItems() {
-        System.out.println("장바구니 상품 출력");
-        for (Item item : items) {
-            System.out.println("상품명:" + item.getName() + ", 합계:" + item.getTotalPrice());
+    public void displayItems(){
+        System.out.println("장바구니 상품 출력 : ");
+        for(int i=0; i<list.size(); i++){
+            System.out.println(list.get(i).getName() + list.get(i).getTotalPrice());
         }
-        System.out.println("전체 가격 합:" + calculateTotalPrice());
     }
 
-    private int calculateTotalPrice() {
-        int totalPrice = 0;
-        for (Item item : items) {
-            totalPrice += item.getTotalPrice();
-        }
-        return totalPrice;
-    }
 
 }
