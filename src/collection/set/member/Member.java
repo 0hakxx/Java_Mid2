@@ -35,10 +35,17 @@ public class Member {
 
     @Override
     public int hashCode() {
-        // 5. id 필드를 기반으로 해시코드를 생성한다.
+        // 5. id 필드를 기반으로 해시코드를 생성한다. --> Objects.hash(id) 코드는 id 값이 같으면 해시 값도 같도록 정의한다.
         //    (Objects.hash는 null도 안전하게 처리해준다. id가 같으면 항상 같은 해시코드가 반환된다.)
         //    -> equals가 true인 객체는 반드시 hashCode도 같아야 하므로, equals에서 비교하는 필드를 기준으로 hashCode를 만든다.
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id='" + id + '\'' +
+                '}';
     }
 
 }
