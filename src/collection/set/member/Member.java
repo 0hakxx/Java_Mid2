@@ -10,7 +10,7 @@ public class Member {
         this.id = id;
     }
 
-    public String ring getId() {
+    public String getId() {
         return id;
     }
 
