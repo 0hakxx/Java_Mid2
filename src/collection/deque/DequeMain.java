@@ -2,12 +2,15 @@ package collection.deque;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 
 public class DequeMain {
 
     public static void main(String[] args) {
         Deque<Integer> deque = new ArrayDeque<>();
         //Deque<Integer> deque = new LinkedList<>();
+        //Deque의 대표적인 구현체는 ArrayDeque, LinkedList 가 있는데 ArrayDeque가 더 빠르다
+
 
         // 데이터 추가
         deque.offerFirst(1);
